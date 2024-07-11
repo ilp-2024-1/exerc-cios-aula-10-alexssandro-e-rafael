@@ -1,0 +1,101 @@
+# Execício 1: Escreva um programa que exiba os valores dos números de 1 até 100. Ao término o
+# programa deverá exibir uma mensagem de encerramento informando que o programa
+# terminou.
+
+from random import randint
+
+
+print('Esse programa exibe os valores de 1 até 100')
+n = 1
+while ( n <= 100):
+    print(n)
+    n = n + 1
+print('Fim do programa')
+
+# Exercício 3: Crie um programa que solicita ao usuário uma senha e em seguida compare esse valor
+# com uma senha armazenada em uma variável. Enquanto o usuário não acertar o valor
+# da senha o programa deverá solicitar a senha ao usuário. Quando o usuário acerta a
+# senha, o programa deverá encerrar exibindo uma mensagem encerramento e informar
+# que o usuário acertou a senha.
+
+senha = str(input('Digite uma senha:'))
+while  senha != 'Rafael':
+    print('Senha incorreta!')
+    senha = str(input('Digite uma nova senha:'))
+
+print("Senha correta.")
+
+# senha = str(input('Digite uma senha:'))
+# if senha == 'Rafael':
+#     print('Senha correta!!')
+# elif senha != 'Rafael':
+#     print('Senha incorreta!')
+
+# Exercício 5: Escreva um programa que solicita ao usuário um valor numérico inteiro positivo e, em
+# seguida, calcule o fatorial desse número usando um loop do tipo while. Ao final o
+# programa deverá exibir o valor do fatorial do número informado pelo usuário e término
+# do programa.
+
+num = int(input('Digite um valor inteiro e positivo:'))
+resultado = 1
+count = 1
+
+while count <= num :
+    resultado *= count
+    count += 1
+
+print(resultado)
+
+# Exercício 7: escreva um algoritmo que solicite ao usuário um número entre 1 e 10.000 e
+# depois informe ao usuário se o número digitado é primo ou não. Um número é
+# dito ser primo quando ele é divisível apenas por 1 e ele mesmo. Ao término,
+# informe que o programa foi encerrado.
+
+p = ('É primo')
+n_p = ('Não é primo')
+n1 = int(input('Digite um número entre 1 e 10.000:'))
+if n1 == 3 or n1 == 2:
+    print(n1,p)
+elif n1 < 2:
+    print(n1,n_p)
+elif n1 % 2 == 0 or n1 % 3 == 0:
+    print(n1,n_p)
+else:
+    print('Primo')
+print('Fim do programa!')
+
+# Exercício 9: escreva um programa que peça ao usuário para digitar um número n e, em
+# seguida, calcule a soma da série harmônica até o enésimo termo: H(n) = 1 +
+# 1/2 + 1/3 + ... + 1/n. Ao término, informe que o programa foi encerrado.
+
+def calcular_serie_harmonica(n):
+    soma = 0.0
+    i = 1
+    while i <= n:
+        soma += 1 / i
+        i += 1
+    return soma
+
+def main():
+    while True:
+        try:
+            n = int(input("Digite um número inteiro positivo (ou zero para sair): "))
+            if n < 0:
+                print("Número inválido. Digite um número inteiro positivo (ou zero para sair).")
+                continue
+            elif n == 0:
+                print("Encerrando o programa...")
+                break
+            else:
+                resultado = calcular_serie_harmonica(n)
+                print(f"A soma da série harmônica até o {n}-ésimo termo é: {resultado:.4f}")
+        except ValueError:
+            print("Entrada inválida. Digite um número inteiro positivo (ou zero para sair).")
+
+    print("O programa foi encerrado.")
+
+if __name__ == "__main__":
+    main()
+
+
+
