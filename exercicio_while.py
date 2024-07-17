@@ -104,24 +104,20 @@ print(resultado)
 # sequência de Fibonacci é dada pela somatório de dois números que resulta no seu
 # sucessor. Ex: 0, 1, 1, 2, 3, 5, 8... Esses são os 7 primeiros números da sequência.
 # Exiba os números na tela e informa o término do programa ao final.
-#exercicio 6. Escreva um programa que peça ao usuário para digitar um número “n” inteiro positivo
-#e, em seguida, imprima os “n” primeiros termos da sequência de Fibonacci. A
-#sequência de Fibonacci é dada pela somatório de dois números que resulta no seu
-#sucessor. Ex: 0, 1, 1, 2, 3, 5, 8... Esses são os 7 primeiros números da sequência.
-#Exiba os números na tela e informa o término do programa ao final.
+
 
 def fibonacci(n, inicio):
-    fib_sequen = [inicio-1, inicio]  # Inicializa a sequência com o primeiro número inserido duas vezes
+    fib_sequen = [inicio-1, inicio]  
 
     while len(fib_sequen) < n:
         fib_sequen.append(fib_sequen[-1] + fib_sequen[-2])
 
     return fib_sequen
 
-# Solicita ao usuário o primeiro número da sequência
+
 inicio = int(input("Digite o primeiro número da sequência de Fibonacci: "))
 
-# Definir que queremos sempre 7 termos
+
 n_termos = 7
 
 sequence = fibonacci(n_termos, inicio)
@@ -154,18 +150,17 @@ print('Fim do programa!')
 
 
 def soma_digitos(numero):
-    numero_str = str(numero)  # Converte o número para string
+    numero_str = str(numero)  
     soma = 0
     indice = 0
     
     while indice < len(numero_str):
-        digito = int(numero_str[indice])  # Converte o caractere para inteiro
+        digito = int(numero_str[indice])  
         soma += digito
         indice += 1
     
     return soma
 
-# Exemplo de uso
 numero = int(input("Digite um número: "))
 resultado = soma_digitos(numero)
 print(f"A soma dos dígitos do número {numero} é: {resultado}")
